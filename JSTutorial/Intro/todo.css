@@ -1,0 +1,13 @@
+/******************************************
+*  Author : Author   
+*  Created On : Mon Jul 31 2017
+*  File : todo.css
+*******************************************/
+.done {
+  text-decoration: line-through;
+  opacity: 0.5;
+}
+
+.selected {
+  color: green;
+}

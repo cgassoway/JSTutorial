@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title> </title>
+    <link rel="stylesheet" type="text/css" href="circles.css">
+    <script type="text/javascript" src="paper-full.js"></script>
+    <!-- Note this is a paperscript type -->
+    <script type="text/paperscript" canvas="myCanvas">
+      var radius = 400;
+      var x = 300;
+      var y = 300;
+      var fadingCircle = [];
+      
+      function onKeyDown(event) {
+        var maxPoint = new Point(view.size.width, view.size.height)
+        var randomPoint = Point.random();
+        var point = maxPoint * randomPoint;
+        var newCircle = new Path.Circle(point, radius)
+        newCircle.fillColor = 'yellow';
+        fadingCircle.push(newCircle);
+        
+        
+      }
+      
+      function onFrame(event) {
+        for (var i=0; i<fadingCircle.length; i++){
+          //console.log("FadingCircle - " + fadingCircle[i].fillColor;
+          fadingCircle[i].fillColor.hue+=1;
+          fadingCircle[i].scale(.9);
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <canvas id="myCanvas" resize></canvas>
+  </body>
+</html>
